@@ -16,7 +16,7 @@ class MyAdapter(var dataList: List<MyData>) : RecyclerView.Adapter<MyAdapter.Bin
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): MyAdapter.BindingHolder? {
         setOnItemClickListener(listener)
         val layoutInflater = LayoutInflater.from(parent!!.context)
-        val binding = OriginalItemLayoutBinding.inflate(layoutInflater, parent, false)
+        val binding = ItemViewBinding.inflate(layoutInflater, parent, false)
         return BindingHolder(binding)
     }
 
@@ -40,7 +40,7 @@ class MyAdapter(var dataList: List<MyData>) : RecyclerView.Adapter<MyAdapter.Bin
         this.listener = listener
     }
 
-    class BindingHolder(var binding: OriginalItemLayoutBinding) : RecyclerView.ViewHolder(binding.root)
+    class BindingHolder(var binding: ItemViewBinding) : RecyclerView.ViewHolder(binding.root)
 
 
 }

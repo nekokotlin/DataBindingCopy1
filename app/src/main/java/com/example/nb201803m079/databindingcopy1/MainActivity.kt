@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val adapter = MyAdapter(list)
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        val binding = DataBindingUtil.setContentView<ItemViewBinding>(this, R.layout.activity_main)
 
         binding.recyclerView.adapter = adapter
 
