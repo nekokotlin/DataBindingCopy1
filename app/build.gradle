@@ -3,8 +3,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
@@ -27,17 +25,7 @@ android {
         enabled = true
     }
 
-    kapt {
-        generateStubs = true
-    }
-
 }
-configurations.all {
-    resolutionStrategy {
-        force 'com.android.support:support-v4:27.0.2'
-    }
-}
-
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
