@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import android.support.v7.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,13 +20,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         val adapter = MyAdapter(list)
-        val binding = DataBindingUtil.setContentView<ItemViewBinding>(this, R.layout.activity_main)
 
-        binding.recyclerView.adapter = adapter
+        this.recyclerView.adapter = adapter
+        this.recyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false)
+
+
 
         adapter.setOnItemClickListener(object : MyAdapter.OnItemClickListener {
             override fun onClick(view: View, data: MyData) {
-                Toast.makeText(applicationContext, data.name, Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, data.name, Toast.LENGTH_SHORT).show()
             }
         })
 
